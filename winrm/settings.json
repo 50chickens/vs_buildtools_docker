@@ -1,0 +1,29 @@
+{
+  "remoteHost": "hosting-dck25",
+  "remotePort": 5986,
+  "useSsl": true,
+  "skipCertificateCheck": true,
+  "credentialFileName": "winrm-credentials-hosting-dck25",
+  "psToolsUrl": "https://download.sysinternals.com/files/PSTools.zip",
+  "localBaseFolder": "..",
+  "remoteBaseFolder": "C:\\builds\\vs_buildtools_docker",
+  "retryIntervalSeconds": 5,
+  "timeoutSeconds": 60,
+  "localFolders": [
+    "windows_docker_host"
+  ],
+  "remoteScripts": [
+    {
+      "enabled": true,
+      "filePath": "windows_docker_host\\assets\\noop.ps1"
+    },
+    {
+      "enabled": true,
+      "filePath": "windows_docker_host\\assets\\configure-server-features.ps1"
+    },
+    {
+      "enabled": true,
+      "filePath": "windows_docker_host\\assets\\configure-docker-host.ps1"
+    }
+  ]
+}
