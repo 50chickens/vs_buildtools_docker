@@ -1,0 +1,1 @@
+"Create a 2D flat-vector cloud architecture diagram with orthogonal 90-degree arrows, color-coded grouping boxes for separate environments, clean sans-serif labels, and standard AWS service icons on a light neutral background."
