@@ -1,29 +1,60 @@
 {
-  "remoteHost": "hosting-dck25",
+  "remoteHosts": [
+    "hosting-dck25"
+  ],
   "remotePort": 5986,
   "useSsl": true,
   "skipCertificateCheck": true,
+  "openTimeoutSeconds": 30,
+  "configurationName": "Microsoft.PowerShell",
   "credentialFileName": "winrm-credentials-hosting-dck25",
   "psToolsUrl": "https://download.sysinternals.com/files/PSTools.zip",
   "localBaseFolder": "..",
   "remoteBaseFolder": "C:\\builds\\vs_buildtools_docker",
   "retryIntervalSeconds": 5,
   "timeoutSeconds": 60,
+  "chunkSizeMb": 5,
+  "skipUpload": false,
+  "ignoreFileTypesIfExistsOnLocal": [],
+  "ignoreFileTypesIfExistsOnRemote": [
+    ".log"
+  ],
+  "ignoreFilesLargerThanMB": 0,
+  "excludeRemoteFolderPatternsFromMD5": [
+    "*\\docker-data\\*"
+  ],
+  "localConfigBaseFolder": "",
+  "targetEnvironment": "",
+  "configurationFoldersToUploadToRemote": [],
   "localFolders": [
     "windows_docker_host"
   ],
+  "localScripts": [],
+  "validationScripts": [],
   "remoteScripts": [
     {
       "enabled": true,
-      "filePath": "windows_docker_host\\assets\\noop.ps1"
+      "filePath": "windows_docker_host\\assets\\noop.ps1",
+      "fullPath": false,
+      "configurationName": "",
+      "reboot": false,
+      "localPostScripts": []
     },
     {
       "enabled": true,
-      "filePath": "windows_docker_host\\assets\\configure-server-features.ps1"
+      "filePath": "windows_docker_host\\assets\\configure-server-features.ps1",
+      "fullPath": false,
+      "configurationName": "",
+      "reboot": true,
+      "localPostScripts": []
     },
     {
       "enabled": true,
-      "filePath": "windows_docker_host\\assets\\configure-docker-host.ps1"
+      "filePath": "windows_docker_host\\assets\\configure-docker-host.ps1",
+      "fullPath": false,
+      "configurationName": "",
+      "reboot": false,
+      "localPostScripts": []
     }
   ]
 }

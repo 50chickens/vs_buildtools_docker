@@ -20,8 +20,10 @@ function Get-Configuration
     $payloadScriptPath     = "$scriptFolder\assets\configure-remote-winrm.ps1"
     $sealedCredentialPath  = "$secretsStore\$credentialName.user.dpapi"
     $credentialPlaceholder = 'sealed'
+    $remoteHost            = $settings.remoteHosts | Select-Object -First 1
 
     $configuration = $settings
+    $configuration | Add-Member -NotePropertyName 'RemoteHost'            -NotePropertyValue $remoteHost            -Force
     $configuration | Add-Member -NotePropertyName 'BinFolder'             -NotePropertyValue $binFolder             -Force
     $configuration | Add-Member -NotePropertyName 'PsToolsZipPath'        -NotePropertyValue $psToolsZipPath        -Force
     $configuration | Add-Member -NotePropertyName 'PsExecPath'            -NotePropertyValue $psExecPath            -Force
@@ -68,7 +70,7 @@ function Get-RemoteCredential($configuration)
 
 function Invoke-RemoteConfiguration($configuration)
 {
-    $remoteHost        = $configuration.remoteHost
+    $remoteHost        = $configuration.RemoteHost
     $psExecPath        = $configuration.PsExecPath
     $payloadScriptPath = $configuration.PayloadScriptPath
     $payloadText       = Get-Content -Path $payloadScriptPath -Raw
