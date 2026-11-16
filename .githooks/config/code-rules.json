@@ -1,0 +1,65 @@
+{
+  "languages": {
+    "powershell": ["*.ps1", "*.psm1", "*.psd1"],
+    "csharp": ["*.cs", "*.csx"]
+  },
+  "rules": [
+    { 
+      "name": "return-using-calculated-values", 
+      "regex": "return (@|\\()", 
+      "description": "Prevent return values using calculated values", 
+      "warnOnly": false, 
+      "appliesTo": ["powershell"] 
+    },
+    { 
+      "name": "assign-using-calculated-values", 
+      "regex": "= \\(@", 
+      "description": "Prevent assignment using calculated values", 
+      "warnOnly": false, 
+      "appliesTo": ["powershell"] 
+    },
+    { 
+      "name": "no-not-usage", 
+      "regex": "-not\\b", 
+      "description": "Prevent usage of -not", 
+      "appliesTo": ["powershell"] 
+    },
+    { 
+      "name": "write-host-outside-write-log", 
+      "regex": "Write-Host", 
+      "scopeName": "Write-Log",
+      "description": "Prevent Write-Host anywhere except inside the body of a Write-Log function",
+      "appliesTo": ["powershell"] 
+    },
+    { 
+      "name": "foreach-statement", 
+      "regex": "foreach\\s*\\(", 
+      "appliesTo": ["powershell", "csharp"] 
+    },
+    { 
+      "name": "join-path", 
+      "regex": "Join-Path", 
+      "appliesTo": ["powershell"] 
+    },
+    { 
+      "name": "console-write", 
+      "regex": "\\[Console\\]::(Out\\.WriteLine|Error\\.WriteLine|WriteLine)", 
+      "appliesTo": ["powershell"] 
+    },
+    { 
+      "name": "out-null", 
+      "regex": "\\|\\s*Out-Null", 
+      "appliesTo": ["powershell"] 
+    },
+    { 
+      "name": "record-type", 
+      "regex": "\\brecord\\s+[A-Za-z_]", 
+      "appliesTo": ["csharp"] 
+    },
+    { 
+      "name": "null-coalescing", 
+      "regex": "\\?\\?", 
+      "appliesTo": ["csharp"] 
+    }
+  ]
+}

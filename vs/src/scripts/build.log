@@ -1,0 +1,34 @@
+Sending build context to Docker daemon  4.655kB
+
+Step 1/8 : FROM mcr.microsoft.com/dotnet/framework/runtime:4.8.1-windowsservercore-ltsc2022
+ ---> 6ea5dd810fef
+Step 2/8 : SHELL ["cmd", "/S", "/C"]
+ ---> Using cache
+ ---> 1c376926712b
+Step 3/8 : RUN mkdir C:\vs_buildtools
+ ---> Using cache
+ ---> 67651ec1748f
+Step 4/8 : RUN curl -SL --output C:\vs_buildtools\vs_buildtools.exe https://aka.ms/vs/17/release/vs_buildtools.exe
+ ---> Using cache
+ ---> 26414cd8cdeb
+Step 5/8 : COPY run-layout.ps1 C:\run-layout.ps1
+ ---> 703856b97c73
+Step 6/8 : RUN powershell -File C:\run-layout.ps1
+ ---> Running in e26171e67adc
+Starting VS Build Tools layout...
+Running layout command...
+Command exit code: -2146232797
+Layout folder contains 1 files
+Top-level contents:
+
+[91mC:\run-layout.ps1 : Layout failed with exit code -2146232797
+[0m[91mAt C:\run-layout.ps1:32 char:5
++     Write-Error "Layout failed with exit code $exitCode"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorExcep 
+   tion
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorExceptio 
+   n,run-layout.ps1
+ 
+The command 'cmd /S /C powershell -File C:\run-layout.ps1' returned a non-zero code: 1
+[0m

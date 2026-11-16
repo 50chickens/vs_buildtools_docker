@@ -1,0 +1,4 @@
+{
+  "include": [ "*.ps1", "*.psm1", "*.psd1", "*.cs", "*.csx", "*.md" ],
+  "exclude": [ "*.webp", "patterns.json" ]
+}

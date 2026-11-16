@@ -1,0 +1,10 @@
+{
+  "mediaBucketName": "installer-media",
+  "mediaKeyPrefix": "installer/",
+  "reportingMediaKeyPrefix": "reporting/",
+  "reportServerEdition": "Developer",
+  "reportServerDatabaseName": "ReportServer",
+  "reportServerUrlPath": "/ReportServer",
+  "portalUrlPath": "/Reports",
+  "mediaFolderPath": "C:\\installer"
+}

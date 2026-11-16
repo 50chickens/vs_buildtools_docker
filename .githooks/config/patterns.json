@@ -1,0 +1,27 @@
+{
+  "patterns": [
+    { "name": "private-key-block", "regex": "-----BEGIN [A-Z ]*PRIVATE KEY-----" },
+    { "name": "aws-access-key-id", "regex": "AKIA[0-9A-Z]{16}" },
+    { "name": "aws-secret-access-key", "regex": "(?i)aws_secret_access_key\\s*[:=]\\s*\\S+" },
+    { "name": "github-token", "regex": "(ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}" },
+    { "name": "github-pat", "regex": "github_pat_[A-Za-z0-9_]{20,}" },
+    { "name": "slack-token", "regex": "xox[baprs]-[A-Za-z0-9-]{10,}" },
+    { "name": "stripe-live-key", "regex": "(sk|rk)_live_[A-Za-z0-9]{10,}" },
+    { "name": "anthropic-key", "regex": "sk-ant-[A-Za-z0-9_-]{20,}" },
+    { "name": "openai-key", "regex": "sk-(proj-)?[A-Za-z0-9]{32,}" },
+    { "name": "jwt", "regex": "eyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{5,}" },
+    { "name": "azure-account-key", "regex": "AccountKey=[A-Za-z0-9+/=]{20,}" },
+    { "name": "sas-token", "regex": "[?&]sig=[A-Za-z0-9%+/=]{20,}" },
+    { "name": "bearer-token", "regex": "Bearer\\s+[A-Za-z0-9._-]{20,}" },
+    { "name": "dpapi-blob", "regex": "AQAAANCMnd8BFdER[A-Za-z0-9+/=]{16,}" },
+    { "name": "hex-securestring-blob", "regex": "\\b[0-9a-f]{96,}\\b" },
+    { "name": "assigned-credential", "regex": "(?i)(password|passwd|pwd|secret|api[_-]?key|apikey|access[_-]?key|client[_-]?secret|private[_-]?key|token)\\s*[:=]\\s*[\"']?(?![$\\s<])([A-Za-z0-9/+_.-]{8,})", "allow": ["(?i)\\s*[:=]\\s*\\$", "(?i)\\s*[:=]\\s*[A-Za-z]+-[A-Za-z]+", "(?i)\\s*[:=]\\s*[A-Za-z]+\\.[A-Za-z]+"] },
+    { "name": "connection-string-password", "regex": "(?i)(Server|Data Source|Host)\\s*=.*(Password|Pwd)\\s*=" },
+    { "name": "email", "regex": "[A-Za-z0-9._%+-]+@(?!users\\.noreply\\.github\\.com)[A-Za-z0-9.-]+\\.[A-Za-z]{2,}" },
+    { "name": "au-phone", "regex": "(?<![0-9])(\\+?61[\\s-]?4[0-9]{2}[\\s-]?[0-9]{3}[\\s-]?[0-9]{3}|0[2-9][0-9]{2}[\\s-]?[0-9]{3}[\\s-]?[0-9]{3}|0[2-9][\\s-]?[0-9]{4}[\\s-]?[0-9]{4})(?![0-9])" },
+    { "name": "us-ssn", "regex": "(?<![0-9])[0-9]{3}-[0-9]{2}-[0-9]{4}(?![0-9])" },
+    { "name": "credit-card", "regex": "(?<![0-9])(4[0-9]{12}([0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13})(?![0-9])" },
+    { "name": "user-profile-path", "regex": "(?i)[A-Z]:[\\\\/]Users[\\\\/][A-Za-z0-9._-]+", "allow": ["(?i)[A-Z]:[\\\\/]Users[\\\\/](ContainerAdministrator|Public|Default)(?![A-Za-z0-9._-])"] },
+    { "name": "known-account-name", "regex": "(?i)\\bmorrisal\\b" }
+  ]
+}

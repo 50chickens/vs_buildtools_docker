@@ -1,0 +1,12 @@
+{
+  "mediaFolderPath": "C:\\installer",
+  "installerFileName": "PowerBIReportServer.exe",
+  "instanceName": "SSRS",
+  "edition": "Developer",
+  "databaseServerName": "localhost",
+  "databaseName": "ReportServer",
+  "wmiNamespace": "root\\Microsoft\\SqlServer\\ReportServer\\RS_SSRS\\v17\\Admin",
+  "reportServerVirtualDirectory": "ReportServer",
+  "reportServerUrl": "http://+:80/ReportServer",
+  "portalUrl": "http://+:80/Reports"
+}
